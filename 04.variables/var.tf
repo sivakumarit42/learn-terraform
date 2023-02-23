@@ -11,18 +11,19 @@ output "sample-new" {
   value = var.sample-new
 }
 
-variable "sample2" {}
+variable "sample2" {
+
+}
 output "sample2" {
   value = var.sample2
 }
 
-variable "cli" {}
 
+#getting input from user by using cli, input commands
+variable "cli" {}
 output "cli" {
   value = var.cli
 }
-
 variable "input" {}
-
-
-
+output "input" {
+  value = var.input}
