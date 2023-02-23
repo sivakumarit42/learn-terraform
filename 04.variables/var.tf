@@ -26,4 +26,5 @@ output "cli" {
 }
 variable "input" {}
 output "input" {
-  value = var.input}
+  value = var.input
+}
