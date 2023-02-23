@@ -16,6 +16,13 @@ output "sample2" {
   value = var.sample2
 }
 
+variable "cli" {}
+
+output "cli" {
+  value = var.cli
+}
+
+variable "input" {}
 
 
 
