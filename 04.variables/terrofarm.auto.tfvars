@@ -1,1 +1,1 @@
-sample2 = "hello new world from tfvars"
+sample2 = "hello new world from auto.tfvars"

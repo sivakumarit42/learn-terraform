@@ -20,6 +20,8 @@ output "sample2" {
 
 
 #getting input from user by using cli, input commands
+#try it..it is picking from shell environment variables:-export TF_VAR_cli="hello from shell environment variable"
+
 variable "cli" {}
 output "cli" {
   value = var.cli
