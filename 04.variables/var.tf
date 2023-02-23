@@ -10,3 +10,12 @@ variable "sample-new" {
 output "sample-new" {
   value = var.sample-new
 }
+
+variable "sample2" {}
+output "sample2" {
+  value = var.sample2
+}
+
+
+
+

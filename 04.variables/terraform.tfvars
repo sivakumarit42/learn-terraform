@@ -1,2 +1,2 @@
-sample = "hello lavanya"
-sample-new = "hello my dear"
+
+sample2 = "hello new world"
