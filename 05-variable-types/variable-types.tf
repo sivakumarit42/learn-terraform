@@ -30,7 +30,7 @@ variable "sample7" {
 }
 output "sample7" {
   value = var.sample7.boolean
-  value1 = var.sample7.string
-  value3 = var.sample7.number
+  #value1 = var.sample7.string
+  #value3 = var.sample7.number
 }
 
