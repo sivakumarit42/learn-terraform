@@ -1,5 +1,12 @@
+data "aws_ami" "ami" {
+  most_recent = true
+  name_regex  = "Centos-8-DevOps-Practice"
+  owners      = ["973714476881"]
+}
+#access image id by using datasourse
+
 resource "aws_instance" "frontend" {
-  ami                    = "ami-0a017d8ceb274537d"
+  ami                    = data.aws_ami.ami.image_id
   instance_type          = "t3.micro"
   vpc_security_group_ids = ["sg-0cbce48f1b39fa890"]
   tags = {
@@ -7,7 +14,7 @@ resource "aws_instance" "frontend" {
   }
 }
 resource "aws_route53_record" "frontend" {
-  zone_id = Z04370391Z7FE49YGIYQ7
+  zone_id = "Z04370391Z7FE49YGIYQ7"
   name    = "frontend.devopsb72.online"
   type    = "A"
   ttl     = 30
@@ -23,7 +30,7 @@ resource "aws_instance" "mongodb" {
   }
 }
 resource "aws_route53_record" "mongodb" {
-  zone_id = Z04370391Z7FE49YGIYQ7
+  zone_id = "Z04370391Z7FE49YGIYQ7"
   name    = "mongodb.devopsb72.online"
   type    = "A"
   ttl     = 30
@@ -39,7 +46,7 @@ resource "aws_instance" "catalogue" {
   }
 }
 resource "aws_route53_record" "catalogue" {
-  zone_id = Z04370391Z7FE49YGIYQ7
+  zone_id = "Z04370391Z7FE49YGIYQ7"
   name    = "catalogue.devopsb72.online"
   type    = "A"
   ttl     = 30
@@ -55,7 +62,7 @@ resource "aws_instance" "redis" {
   }
 }
 resource "aws_route53_record" "redis" {
-  zone_id = Z04370391Z7FE49YGIYQ7
+  zone_id = "Z04370391Z7FE49YGIYQ7"
   name    = "frontend.devopsb72.online"
   type    = "A"
   ttl     = 30
@@ -70,7 +77,7 @@ resource "aws_instance" "user" {
   }
 }
 resource "aws_route53_record" "user" {
-  zone_id = Z04370391Z7FE49YGIYQ7
+  zone_id = "Z04370391Z7FE49YGIYQ7"
   name    = "frontend.devopsb72.online"
   type    = "A"
   ttl     = 30
@@ -85,7 +92,7 @@ resource "aws_instance" "cart" {
   }
 }
 resource "aws_route53_record" "cart" {
-  zone_id = Z04370391Z7FE49YGIYQ7
+  zone_id = "Z04370391Z7FE49YGIYQ7"
   name    = "frontend.devopsb72.online"
   type    = "A"
   ttl     = 30
@@ -100,7 +107,7 @@ resource "aws_instance" "mysql" {
   }
 }
 resource "aws_route53_record" "mysql" {
-  zone_id = Z04370391Z7FE49YGIYQ7
+  zone_id = "Z04370391Z7FE49YGIYQ7"
   name    = "frontend.devopsb72.online"
   type    = "A"
   ttl     = 30
@@ -115,7 +122,7 @@ resource "aws_instance" "shipping" {
   }
 }
 resource "aws_route53_record" "shipping" {
-  zone_id = Z04370391Z7FE49YGIYQ7
+  zone_id = "Z04370391Z7FE49YGIYQ7"
   name    = "frontend.devopsb72.online"
   type    = "A"
   ttl     = 30
@@ -130,7 +137,7 @@ resource "aws_instance" "rabbitmq" {
   }
 }
 resource "aws_route53_record" "rabbitmq" {
-  zone_id = Z04370391Z7FE49YGIYQ7
+  zone_id = "Z04370391Z7FE49YGIYQ7"
   name    = "frontend.devopsb72.online"
   type    = "A"
   ttl     = 30
@@ -146,7 +153,7 @@ resource "aws_instance" "payment" {
   }
 }
 resource "aws_route53_record" "payment" {
-  zone_id = Z04370391Z7FE49YGIYQ7
+  zone_id = "Z04370391Z7FE49YGIYQ7"
   name    = "frontend.devopsb72.online"
   type    = "A"
   ttl     = 30
