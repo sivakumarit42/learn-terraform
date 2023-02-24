@@ -18,6 +18,6 @@ variable "sample3" {
   default = true
 }
 output "sample3" {
-  value = var.sample3
-  ##value = "the output of sample3 is: ${var.sample3}"
+  #value = var.sample3
+  value = "the output of boolean is: ${var.sample3}"
 }
