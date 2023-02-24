@@ -19,5 +19,5 @@ variable "sample3" {
 }
 output "sample3" {
   value = var.sample3
-  value1 = "the output of sample3 is: ${sample3}"
+  ##value = "the output of sample3 is: ${sample3}"
 }
