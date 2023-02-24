@@ -63,7 +63,7 @@ resource "aws_instance" "redis" {
 }
 resource "aws_route53_record" "redis" {
   zone_id = "Z04370391Z7FE49YGIYQ7"
-  name    = "frontend.devopsb72.online"
+  name    = "redis.devopsb72.online"
   type    = "A"
   ttl     = 30
   records = [aws_instance.redis.private_ip]
@@ -78,7 +78,7 @@ resource "aws_instance" "user" {
 }
 resource "aws_route53_record" "user" {
   zone_id = "Z04370391Z7FE49YGIYQ7"
-  name    = "frontend.devopsb72.online"
+  name    = "user.devopsb72.online"
   type    = "A"
   ttl     = 30
   records = [aws_instance.user.private_ip]
@@ -93,7 +93,7 @@ resource "aws_instance" "cart" {
 }
 resource "aws_route53_record" "cart" {
   zone_id = "Z04370391Z7FE49YGIYQ7"
-  name    = "frontend.devopsb72.online"
+  name    = "cart.devopsb72.online"
   type    = "A"
   ttl     = 30
   records = [aws_instance.cart.private_ip]
@@ -108,7 +108,7 @@ resource "aws_instance" "mysql" {
 }
 resource "aws_route53_record" "mysql" {
   zone_id = "Z04370391Z7FE49YGIYQ7"
-  name    = "frontend.devopsb72.online"
+  name    = "mysql.devopsb72.online"
   type    = "A"
   ttl     = 30
   records = [aws_instance.mysql.private_ip]
@@ -123,7 +123,7 @@ resource "aws_instance" "shipping" {
 }
 resource "aws_route53_record" "shipping" {
   zone_id = "Z04370391Z7FE49YGIYQ7"
-  name    = "frontend.devopsb72.online"
+  name    = "shipping.devopsb72.online"
   type    = "A"
   ttl     = 30
   records = [aws_instance.shipping.private_ip]
@@ -138,7 +138,7 @@ resource "aws_instance" "rabbitmq" {
 }
 resource "aws_route53_record" "rabbitmq" {
   zone_id = "Z04370391Z7FE49YGIYQ7"
-  name    = "frontend.devopsb72.online"
+  name    = "rabbitmq.devopsb72.online"
   type    = "A"
   ttl     = 30
   records = [aws_instance.rabbitmq.private_ip]
@@ -154,7 +154,7 @@ resource "aws_instance" "payment" {
 }
 resource "aws_route53_record" "payment" {
   zone_id = "Z04370391Z7FE49YGIYQ7"
-  name    = "frontend.devopsb72.online"
+  name    = "payment.devopsb72.online"
   type    = "A"
   ttl     = 30
   records = [aws_instance.payment.private_ip]
