@@ -11,7 +11,7 @@ variable "sample2" {
   default = 100
 }
 output "sample2_output_is" {
-  value = "the output of sample2 is- ${sample2}"
+  value = "the output of sample2 is- ${var.sample2}"
 }
 # Boolean Data type
 variable "sample3" {
@@ -19,5 +19,5 @@ variable "sample3" {
 }
 output "sample3" {
   value = var.sample3
-  ##value = "the output of sample3 is: ${sample3}"
+  ##value = "the output of sample3 is: ${var.sample3}"
 }
