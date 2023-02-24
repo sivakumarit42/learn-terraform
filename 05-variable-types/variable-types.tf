@@ -29,9 +29,6 @@ variable "sample7" {
   }
 }
 output "sample7" {
-  value = var.sample7.boolean
-  #value1 = var.sample7.string
-  #value3 = var.sample7.number
-
+  value = "value of map is:${var.sample7[string]},${var.sample7[number]}${var.sample7[boolean]}"
 }
 
