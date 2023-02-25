@@ -10,7 +10,7 @@ resource "aws_instance" "statefile" {
 terraform {
   backend "s3" {
     bucket = "mys3bucketb72"
-    key    = "s3://mys3bucketb72/statefile_1/"
+    key    = "06-statefile/terraform.tfstate"
     region = "us-east-1"
   }
 }
