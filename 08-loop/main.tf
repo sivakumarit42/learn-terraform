@@ -1,22 +1,25 @@
-variable "d1" {
-  default = 5
-}
-
 resource "null_resource" "d1" {
   count = var.d1
 }
-
-variable "d2" {
-  default = ["apple", "banana"]
+variable "d1" {
+  default = 5
 }
 
 resource "null_resource" "d2" {
   count = length(var.d2)
 }
-output "FRUITS" {
-  value = [for i in var.d2 : upper(i)]  #output will print in uppercase
+variable "d2" {
+  default = ["apple", "banana"]
 }
 
+output "FRUITS" {
+  #value = [for i in var.d2 : upper(i)]  #output will print in uppercase
+  value = var.d2[count.index]
+}
+
+resource "null_resource" "d3" {
+  for_each = var.d3                  #for_each command is used to access map of map variables
+}
 variable "d3" {
   default = {
     apple = {
@@ -30,13 +33,12 @@ variable "d3" {
   }
 }
 
-resource "null_resource" "d3" {
-  for_each = var.d3
-}
-
 output "d3" {
   value = var.d3.apple
   #value = var.d3.apple.count
   #value = var.d3.apple.name
+  #value = var.d3.banana
+  #value = var.d3.banana.name
+  #value = var.d3.banana.count
   #value = var.d3.*  it will print all details of apple and banana
 }
