@@ -61,7 +61,7 @@ variable "d4" {
     }
   }
 }
-output "count" {
+output "d4_friuts" {
   value =var.d4
 }
 
