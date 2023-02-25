@@ -20,11 +20,11 @@ output "FRUITS" {
 variable "d3" {
   default = {
     apple = {
-      name  = "grapes"
+      name  = "mango"
       count = 3
     }
     banana = {
-      name  = "goa"
+      name  = "blackberry"
       count = 30
     }
   }
