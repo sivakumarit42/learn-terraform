@@ -14,7 +14,7 @@ variable "d2" {
 
 output "d2_FRUITS" {
   #value = [for i in var.d2 : upper(i)]  #output will print in uppercase
-  value = var.d2[count.index]
+  value = var.d2
 }
 
 resource "null_resource" "d3" {
