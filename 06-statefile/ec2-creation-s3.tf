@@ -6,3 +6,11 @@ resource "aws_instance" "statefile" {
     Name = "demo-instance-statefile"
   }
 }
+
+terraform {
+  backend "s3" {
+    bucket = "mys3bucketb72"
+    key    = "s3://mys3bucketb72/statefile_1/"
+    region = "us-east-1"
+  }
+}
