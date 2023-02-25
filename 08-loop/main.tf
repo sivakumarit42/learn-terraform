@@ -9,7 +9,7 @@ resource "null_resource" "d2" {
   count = length(var.d2)
 }
 variable "d2" {
-  default = ["apple", "banana"]
+  default = ["apple", "banana","fruit7"]
 }
 
 output "d2_FRUITS" {
