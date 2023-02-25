@@ -28,7 +28,7 @@ variable "instances" {
   }
 }
 output "ec2" {
-  value = aws_instance.instances
+  value = aws_instance.instances.*.private_ip
 }
 
 ##little matured code
