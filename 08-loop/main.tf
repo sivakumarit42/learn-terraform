@@ -73,6 +73,7 @@ variable "d5" {
     name  = "apple"
     count = 12
     price = 100
+    name=banana
   }
 }
 output "d5_friuts" {
