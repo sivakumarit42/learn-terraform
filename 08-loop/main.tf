@@ -66,7 +66,7 @@ output "d4_friuts" {
 }
 
 resource "null_resource" "d5" {
-  count = var.d4
+  for_each = var.d4
 }
 variable "d5" {
   default = {
