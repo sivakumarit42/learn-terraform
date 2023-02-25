@@ -4,7 +4,7 @@ data "aws_ami" "ami" {                                  #access image id by usin
   owners      = ["973714476881"]
 }
 
-resource "aws_instance" "frontend" {
+resource "aws_instance" "instances" {
   #count                 = length(var.instances)        #it wont work for nested map
   for_each               = var.instances
   ami                    = data.aws_ami.ami.image_id
@@ -26,6 +26,9 @@ variable "instances" {
       type = "t2.small"
     }
   }
+}
+output "ec2" {
+  value = aws_instance.instances
 }
 
 ##little matured code
