@@ -73,7 +73,7 @@ variable "d5" {
     name  = "apple"
     count = 12
     price = 100
-    name=banana
+    #name=banana    #not possible with same name
   }
 }
 output "d5_friuts" {
