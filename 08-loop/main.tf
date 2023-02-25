@@ -47,7 +47,7 @@ output "d3_fruits" {
 }
 
 resource "null_resource" "d4" {
-  count = var.d4
+  for_each = var.d4
 }
 variable "d4" {
   default = {
