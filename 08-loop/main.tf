@@ -20,11 +20,11 @@ output "FRUITS" {
 variable "d3" {
   default = {
     apple = {
-      name  = "mango"
+      name  = "fruit"
       count = 3
     }
     banana = {
-      name  = "blackberry"
+      name  = "fruit2"
       count = 30
     }
   }
@@ -36,5 +36,7 @@ resource "null_resource" "d3" {
 
 output "d3" {
   value = var.d3.apple
-  #value = var.d3.*  it will print all details
+  #value = var.d3.apple.count
+  #value = var.d3.apple.name
+  #value = var.d3.*  it will print all details of apple and banana
 }

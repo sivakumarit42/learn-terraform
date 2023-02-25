@@ -18,6 +18,6 @@ variable "instances" {
   default = ["cart", "catalogue", "user"]
 }
 output "puplic-ip" {
-  #value = aws_instance.frontend.*.private_ip
-  value = aws_instance.frontend.*
+  value = aws_instance.frontend.*.private_ip
+  #value = aws_instance.frontend.*  it will print all details
 }
