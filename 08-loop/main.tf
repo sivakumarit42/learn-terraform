@@ -46,36 +46,21 @@ output "d3_fruits" {
   #value = var.d3.*  it will print all details of apple and banana
 }
 
-resource "null_resource" "d4" {
-  for_each = var.d4
+resource "null_resource" "d5" {                     #list of map
+  count = length(var.d5)
 }
-variable "d4" {
-  default = {
-    apple = {
+variable "d5" {
+  default = [
+    {
       name  = "apple"
       count = 12
     },
-    grapes = {
+    {
       name  = "banana"
-      count = 22
+      count = 13
     }
-  }
+  ]
 }
-output "d4_friuts" {
-  value =var.d4
-}
-
-resource "null_resource" "d5" {
-  for_each = var.d4
-}
-variable "d5" {
-  default = {
-    name  = "apple"
-    count = 12
-    price = 100
-    #name=banana    #not possible with same name
-  }
-}
-output "d5_friuts" {
-  value =var.d5
+output "d5_fruits" {
+  value = var.d5
 }
