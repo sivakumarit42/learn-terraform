@@ -10,6 +10,9 @@ resource "aws_instance" "frontend" {
   ami                    = data.aws_ami.ami.image_id
   instance_type          = "t3.micro"
   vpc_security_group_ids = ["sg-0cbce48f1b39fa890"]
+  tags = {
+    Name=var.instances
+  }
 }
 variable "instances" {
   default = ["cart", "catalogue", "user"]
