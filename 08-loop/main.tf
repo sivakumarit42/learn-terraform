@@ -45,3 +45,17 @@ output "d3_fruits" {
   #value = var.d3.banana.count
   #value = var.d3.*  it will print all details of apple and banana
 }
+
+resource "null_resource" "d4" {
+  count = var.d4
+}
+variable "d4" {
+  default = {
+    name=apple
+    count=12
+    name=banana
+    count=22
+  }
+}output "count" {
+  value = var.d4.count
+}
