@@ -12,4 +12,5 @@ variable "d1" {
 }
 output "course_names" {
   value = var.d1.*.course_name
+  #value = var.d1.*.trainer_name
 }
