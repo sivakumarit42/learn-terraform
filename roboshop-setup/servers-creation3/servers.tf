@@ -28,29 +28,29 @@ data "aws_ami" "ami" {                                  #access image id by usin
 #  }
 #}
 
-#little matured code
-resource "aws_instance" "frontend" {
-  count                 = length(var.instances)                  #list of map
-  ami                    = data.aws_ami.ami.image_id
-  instance_type          = var.instances[count.index]["type"]
-  vpc_security_group_ids = ["sg-0cbce48f1b39fa890"]
-  tags = {
-     Name=var.instances[count.index]["name"]
-  }
-}
-
-variable "instances" {
-  default = [
-    {
-      name = "catalogue"
-      type = "t1.micro"
-    },
-    {
-      name = "user"
-      type = "t1.micro"
-    }
-  ]
-}
+##little matured code
+#resource "aws_instance" "frontend" {
+#  count                 = length(var.instances)                  #list of map
+#  ami                    = data.aws_ami.ami.image_id
+#  instance_type          = var.instances[count.index]["type"]
+#  vpc_security_group_ids = ["sg-0cbce48f1b39fa890"]
+#  tags = {
+#     Name=var.instances[count.index]["name"]
+#  }
+#}
+#
+#variable "instances" {
+#  default = [
+#    {
+#      name = "catalogue"
+#      type = "t1.micro"
+#    },
+#    {
+#      name = "user"
+#      type = "t1.micro"
+#    }
+#  ]
+#}
 
 # im-matured code
 resource "aws_instance" "frontend" {
