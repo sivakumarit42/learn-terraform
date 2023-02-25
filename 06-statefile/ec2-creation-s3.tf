@@ -12,7 +12,7 @@ terraform {
     bucket = "mys3bucketb72"
    # key    = "06-statefile/terraform.tfstate"
     #key    = "learn-terraform/06-statefile/terraform.tfstate"
-    kay     ="statefile"
+    key     ="statefile"
     region = "us-east-1"
   }
 }
