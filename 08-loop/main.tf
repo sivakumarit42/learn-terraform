@@ -62,7 +62,7 @@ variable "d4" {
   }
 }
 output "count" {
-  value = var.d4.count
+  value =var.d4
 }
 
 
