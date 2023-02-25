@@ -28,7 +28,7 @@ data "aws_ami" "ami" {                                  #access image id by usin
 #  }
 #}
 
-#little im-matured code
+#little matured code
 resource "aws_instance" "frontend" {
   count                 = length(var.instances)                  #list of map
   ami                    = data.aws_ami.ami.image_id
@@ -52,4 +52,20 @@ variable "instances" {
   ]
 }
 
+# im-matured code
+resource "aws_instance" "frontend" {
+  count                 = length(var.name)                  #list of variables
+  ami                    = data.aws_ami.ami.image_id
+  instance_type          = var.type[count.index]
+  vpc_security_group_ids = ["sg-0cbce48f1b39fa890"]
+  tags = {
+    Name=var.name[count.index]
+  }
+}
 
+variable "name" {
+  default = [ "catalogue", "user" ]
+}
+variable "type" {
+  default = [ "t2.micro", "t3.micro" ]
+}
