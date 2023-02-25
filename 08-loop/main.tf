@@ -2,7 +2,7 @@ variable "d1" {
   default = 5
 }
 
-resource "null_resource" "nothing" {
+resource "null_resource" "d1" {
   count = var.d1
 }
 
