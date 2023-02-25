@@ -18,8 +18,10 @@ output "d2_FRUITS" {
 }
 
 resource "null_resource" "d3" {
-  for_each = var.d3                  #for_each command is used to access map of map variables
+  #for_each = var.d3                  #for_each command is used to access map of map variables
+  count = var.d3
 }
+
 variable "d3" {
   default = {
     apple = {
