@@ -35,5 +35,5 @@ resource "null_resource" "d3" {
 }
 
 output "d3" {
-  value = var.d3.apple.*
+  value = var.d3.*
 }
