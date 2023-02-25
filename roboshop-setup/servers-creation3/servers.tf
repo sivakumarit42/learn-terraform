@@ -9,11 +9,11 @@ resource "aws_instance" "frontend" {
   #count                 = length(var.instances)        #it wont work for nested map
   for_each               = var.instances
   ami                    = data.aws_ami.ami.image_id
-  instance_type          = each.value[type]
+  instance_type          = each.value["type"]
   vpc_security_group_ids = ["sg-0cbce48f1b39fa890"]
   tags = {
    # Name=var.instances[count.index]                    #it wont work for nested map
-    Name=each.value[name]
+    Name=each.value["name"]
   }
 }
 variable "instances" {
