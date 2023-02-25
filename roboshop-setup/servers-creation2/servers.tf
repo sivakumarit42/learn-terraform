@@ -12,5 +12,5 @@ resource "aws_instance" "frontend" {
   vpc_security_group_ids = ["sg-0cbce48f1b39fa890"]
 }
 variable "instances" {
-  default = [cart, catalogue, user]
+  default = ["cart", "catalogue", "user"]
 }
