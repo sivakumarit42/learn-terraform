@@ -12,7 +12,7 @@ variable "d2" {
   default = ["apple", "banana"]
 }
 
-output "FRUITS" {
+output "d2_FRUITS" {
   #value = [for i in var.d2 : upper(i)]  #output will print in uppercase
   value = var.d2[count.index]
 }
@@ -33,7 +33,7 @@ variable "d3" {
   }
 }
 
-output "d3" {
+output "d3_fruits" {
   value = var.d3.apple
   #value = var.d3.apple.count
   #value = var.d3.apple.name
