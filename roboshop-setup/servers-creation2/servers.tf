@@ -6,11 +6,11 @@ data "aws_ami" "ami" {
 #access image id by using datasourse
 
 resource "aws_instance" "frontend" {
-  count                  = 5
+  count                  = length(var.instances)
   ami                    = data.aws_ami.ami.image_id
   instance_type          = "t3.micro"
   vpc_security_group_ids = ["sg-0cbce48f1b39fa890"]
-  tags = {
-    Name = "frontend"
-  }
+}
+variable "instances" {
+  default = [cart, catalogue, user]
 }
