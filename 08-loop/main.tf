@@ -51,10 +51,14 @@ resource "null_resource" "d4" {
 }
 variable "d4" {
   default = {
-    name=apple
-    count=12
-    name=banana
-    count=22
+    apple = {
+      name  = apple
+      count = 12
+    },
+    grapes = {
+      name  = banana
+      count = 22
+    }
   }
 }output "count" {
   value = var.d4.count
