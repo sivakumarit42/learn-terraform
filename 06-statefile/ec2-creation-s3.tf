@@ -11,7 +11,8 @@ terraform {
   backend "s3" {
     bucket = "mys3bucketb72"
    # key    = "06-statefile/terraform.tfstate"
-    key    = "learn-terraform/06-statefile/terraform.tfstate"
+    #key    = "learn-terraform/06-statefile/terraform.tfstate"
+    kay     ="statefile"
     region = "us-east-1"
   }
 }
