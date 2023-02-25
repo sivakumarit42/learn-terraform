@@ -34,7 +34,8 @@ variable "d3" {
 }
 
 output "d3_fruits" {
-  value = var.d3.apple
+  value = var.d3
+ # value = var.d3.apple
   #value = var.d3.apple.count
   #value = var.d3.apple.name
   #value = var.d3.banana
