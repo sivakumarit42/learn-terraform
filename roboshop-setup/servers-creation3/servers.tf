@@ -43,11 +43,11 @@ variable "instances" {
   default = [
     {
       name = "catalogue"
-      type = "t2.small"
+      type = "t1.micro"
     },
     {
       name = "user"
-      type = "t2.small"
+      type = "t1.micro"
     }
   ]
 }
