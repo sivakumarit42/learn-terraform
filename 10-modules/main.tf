@@ -1,4 +1,4 @@
 #module declaration
 module "demo" {
-  source = "./test"
+  source = "./test"         #./ indicates current directory
 }
