@@ -21,4 +21,3 @@ resource "aws_route53_record" "record" {
   records = [aws_instance.ec2.private_ip]
 }
 
-variable "component" {}
