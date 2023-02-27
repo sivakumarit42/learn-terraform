@@ -15,9 +15,10 @@ resource "aws_instance" "ec2" {
 }
 resource "aws_route53_record" "record" {
   zone_id = "Z04370391Z7FE49YGIYQ7"
-  name    = "${"component"}.devopsb72.online"
+  name    = "${var.component}.devopsb72.online"
   type    = "A"
   ttl     = 30
   records = [aws_instance.ec2.private_ip]
 }
 
+variable "component" {}
