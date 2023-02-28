@@ -1,4 +1,3 @@
-
 data "aws_ami" "ami" {
   most_recent = true
   name_regex  = "Centos-8-DevOps-Practice"
@@ -14,14 +13,10 @@ resource "aws_instance" "ec2" {
     Name =var.component
   }
 }
-resource "aws_route53_record" "record" {
-  zone_id = "Z04370391Z7FE49YGIYQ7"
-  name    = "${var.component}.devopsb72.online"
-  type    = "A"
-  ttl     = 30
-  records = [aws_instance.ec2.private_ip]
-}
-
 variable "component" {}
 variable "instance-type" {}
 variable "sg-id" {}
+
+output "private_ip" {
+  value = aws_instance.ec2.private_ip
+}
