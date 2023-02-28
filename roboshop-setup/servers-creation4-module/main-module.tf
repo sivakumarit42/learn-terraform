@@ -11,6 +11,9 @@ module "ec2-instances" {
   instance-type=each.value["type"]
   component = each.value["name"]
 }
+module "sg" {
+  source = "./sg"         #./ indicates current directory
+  }
 
 variable "instances" {
   default = {                                #map of map
