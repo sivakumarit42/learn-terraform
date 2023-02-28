@@ -10,7 +10,7 @@ module "ec2-instances" {
   for_each      = var.instances
   instance-type = each.value["type"]
   component     = each.value["name"]
-  sg-id            = module.sg.sg_id
+  sg-id         = module.sg.sg_id
 }
 module "sg" {
   source = "./sg"         #./ indicates current directory
