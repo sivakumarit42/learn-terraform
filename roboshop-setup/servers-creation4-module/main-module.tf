@@ -6,10 +6,11 @@
 
 #module declaration
 module "ec2-instances" {
-  source = "./ec2"         #./ indicates current directory
-  for_each = var.instances
-  instance-type=each.value["type"]
-  component = each.value["name"]
+  source        = "./ec2"         #./ indicates current directory
+  for_each      = var.instances
+  instance-type = each.value["type"]
+  component     = each.value["name"]
+  sg-id            = module.sg.sg_id
 }
 module "sg" {
   source = "./sg"         #./ indicates current directory
