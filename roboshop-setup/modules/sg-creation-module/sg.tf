@@ -22,6 +22,6 @@ resource "aws_security_group" "allow_tls" {
   }
 }
 
-output "sg_id" {
+output "sg_id" {                          #declared the output for share the input to root module
   value = aws_security_group.allow_tls.id
 }

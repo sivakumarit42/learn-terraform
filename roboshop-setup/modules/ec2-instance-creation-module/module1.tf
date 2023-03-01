@@ -17,6 +17,6 @@ variable "component" {}
 variable "instance-type" {}
 variable "sg-id" {}
 
-output "private_ip" {
+output "private_ip" {                                           #declared the output for share the input to root module
   value = aws_instance.ec2.private_ip
 }
