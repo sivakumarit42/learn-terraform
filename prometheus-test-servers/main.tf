@@ -19,7 +19,7 @@ resource "aws_spot_instance_request" "node2" {
   ami                    = "ami-048ce8b26a6a9b9af"
   instance_type          = "t3.micro"
   vpc_security_group_ids = ["sg-0cbce48f1b39fa890"]
-  #wait_for_fulfillment   = true
+  wait_for_fulfillment   = true
 
   tags = {
     Name = "prom-test-node"
@@ -31,3 +31,4 @@ resource "aws_ec2_tag" "node2" {
   key         = "Name"
   value       = "prom-test-node"
 }
+
