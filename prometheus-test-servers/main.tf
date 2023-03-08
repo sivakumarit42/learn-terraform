@@ -31,4 +31,3 @@ resource "aws_ec2_tag" "node2" {
   key         = "Name"
   value       = "prom-test-node1"
 }
-
