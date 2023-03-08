@@ -5,14 +5,14 @@ resource "aws_spot_instance_request" "node1" {
   wait_for_fulfillment   = true
 
   tags = {
-    Name = "prom-test-server"
+    Name = "prom-test-server1"
   }
 }
 
 resource "aws_ec2_tag" "node1" {
   resource_id = aws_spot_instance_request.node1.spot_instance_id
   key         = "Name"
-  value       = "prom-test-server"
+  value       = "prom-test-server1"
 }
 
 resource "aws_spot_instance_request" "node2" {
@@ -22,13 +22,13 @@ resource "aws_spot_instance_request" "node2" {
   wait_for_fulfillment   = true
 
   tags = {
-    Name = "prom-test-node"
+    Name = "prom-test-node1"
   }
 }
 
 resource "aws_ec2_tag" "node2" {
   resource_id = aws_spot_instance_request.node2.spot_instance_id
   key         = "Name"
-  value       = "prom-test-node"
+  value       = "prom-test-node1"
 }
 
